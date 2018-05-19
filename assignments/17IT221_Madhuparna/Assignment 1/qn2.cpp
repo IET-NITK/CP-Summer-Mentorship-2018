@@ -1,5 +1,5 @@
 // https://www.codechef.com/LTIME52/problems/C00K0FF/
-//https://www.codechef.com/submit/complete/18536726
+//https://www.codechef.com/viewsolution/18536726
 
 //code:
 #include<bits/stdc++.h>
