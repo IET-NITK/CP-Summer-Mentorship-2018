@@ -20,7 +20,7 @@ while(t--)
 	cin>>s[i];
 	for(i=0;i<n;i++)
 	{	
-		for(j=0;j<n;i++)
+		for(j=0;j<n;j++)
 		if (s[i][j]=='X')
 		{
 			g[i][j]=-1;
