@@ -1,6 +1,6 @@
 /*https://www.codechef.com/problems/C00K0FF
-Solution:https://www.codechef.com/viewsolution/18557914
-*/
+Solution:https://www.codechef.com/viewsolution/18557914*/
+
 #include <iostream>
 #include <map>
 #include <string>
