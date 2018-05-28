@@ -1,0 +1,132 @@
+//Question: https://www.hackerrank.com/contests/university-codesprint-3/challenges/bobs-game
+
+//Code:
+#include<bits/stdc++.h>
+using namespace std;
+int n;
+int arr[1000][1000];
+int mex(int a,int b,int c)
+{
+    int MEX=0;
+    int i=0;
+    while(i<4)
+    {
+        if(i!=a&&i!=b&&i!=c)
+        { MEX=i;
+         break;
+        }
+        i++;
+    }
+    return MEX;
+}
+int grundy(int x,int y)
+{
+    
+    if(x<0||y<0||x>=n||y>=n)
+        return -1;
+    if(arr[x][y]!=-2)
+        return arr[x][y];
+        
+        return arr[x][y]= mex(grundy(x-1,y),grundy(x,y-1),grundy(x-1,y-1));
+    
+}
+void initialise()
+{
+    for(int i=0;i<1000;++i)
+        for(int j=0;j<1000;++j)
+            arr[i][j]=-2;
+}
+int main()
+{
+   // cout<<mex(1,1,0)<<endl;
+    int q;
+    cin>>q;
+   while(q--)
+    {
+        
+        cin>>n;
+        
+        initialise();
+        arr[0][0]=0;
+        char m;
+        vector<pair<int,int>> v;
+        for(int i=0;i<n;++i)
+        {for(int j=0;j<n;++j)
+        {
+            cin>>m;
+            if(m=='X')
+                arr[i][j]=-1;
+            
+            if(m=='K')
+                v.push_back(make_pair(i,j));
+        }
+        }
+       for(int i=0;i<n;++i)
+       {for(int j=0;j<n;++j)
+           {
+               arr[i][j]=grundy(i,j);
+           }
+       }
+     /*for(int i=0;i<n;++i)
+        {for(int j=0;j<n;++j)
+        { cout<<arr[i][j]<<" ";
+        }
+       cout<<endl;}*/
+        
+       int siz=v.size();
+       int flag=0;
+       int win=0;
+       for(int i=0;i<siz;++i)
+       {
+           int one=v[i].first;
+           int two=v[i].second;
+           flag=flag^arr[one][two];
+       }
+            if(flag==0)
+           cout<<"LOSE"<<endl;
+ else{
+       for(int i=0;i<siz;++i)
+       {int one=v[i].first;
+           int two=v[i].second;
+           
+           if(one!=0&&two==0)
+           {    
+               if((flag^arr[one-1][two]^arr[one][two])==0)
+                   win++;
+            
+           }
+           else if(two!=0&&one==0)
+           {
+               if((flag^arr[one][two]^arr[one][two-1])==0)
+                   win++;
+           }
+           
+           else if(one!=0&&two!=0)
+           {
+               int a=arr[one-1][two];
+               int b=arr[one][two-1];
+               int c=arr[one-1][two-1];
+                if(a>=0)
+                {
+                    if((flag^a^arr[one][two])==0)
+                        win++;
+                }
+               if(b>=0)
+               {
+                   if((flag^arr[one][two]^b)==0)
+                       win++;
+               }
+               if(c>=0)
+               {
+                   if((flag^arr[one][two]^c)==0)
+                       win++;
+               }
+           }
+             
+       }
+      
+      
+           cout<<"WIN"<<" "<<win<<endl;
+        }
+    }
+}
