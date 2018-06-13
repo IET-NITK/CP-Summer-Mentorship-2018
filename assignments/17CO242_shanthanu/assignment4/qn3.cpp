@@ -1,3 +1,12 @@
+/*
+output:
+1
+2
+3
+5
+7
+*/
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -74,6 +83,8 @@ int priority_queue::extract_min() {
 	heapify_down(1);
 	return element;
 }
+
+
 
 int main() {
 	priority_queue hash;

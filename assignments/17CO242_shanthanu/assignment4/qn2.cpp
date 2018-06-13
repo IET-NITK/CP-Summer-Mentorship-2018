@@ -1,3 +1,13 @@
+/*Output:
+Preorder Traversal:
+5 2 1 4 8 6 10 
+Inorder Traversal:
+1 2 4 5 6 8 10 
+Postorder Traversal:
+1 4 2 6 10 8 5 
+Levelorder Traversal:
+5 2 8 1 4 6 10 
+*/
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -123,11 +133,13 @@ void bst::levelorder_traverse() {
 
 /*
       5
-	 / \
+	   / \
     2   8
    / \ / \
   1  4 6  10
 */
+
+
 int main() {
 	bst tree;
 	tree.insert(5);
