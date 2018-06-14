@@ -1,0 +1,24 @@
+//OUTPUT
+
+NUMBER OF ELEMENTS :7
+
+Enter the elements
+10 15 30 14 50 100 2
+Enter number of Maximum elements required
+4
+Extract max element
+100
+New heap is
+50 30 2 10 14 15
+Extract max element
+50
+New heap is
+30 15 2 10 14
+Extract max element
+30
+New heap is
+15 14 2 10
+Extract max element
+15
+New heap is
+14 10 2

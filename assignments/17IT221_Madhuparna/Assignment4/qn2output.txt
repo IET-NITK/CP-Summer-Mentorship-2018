@@ -1,0 +1,116 @@
+BINARY SEARCH TREE OUTPUT
+
+
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1												//INSERTING ELEMENT
+Enter node value
+10
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+9
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+2
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+5
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+3
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+4
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+13
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+12
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+1
+Enter node value
+25
+Done
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+2
+Enter search element				//SEARCHING ELEMENT
+12
+Element found!
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+2
+Enter search element
+25
+Element found!
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+2
+Enter search element
+45
+Not found
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
+3
+Preorder traversal:							//TREE TRAVERSAL
+10->9->2->5->3->4->13->12->25->
+Postorder traversal:
+4->3->5->2->9->12->25->13->10->
+Inorder Traversal:
+2->3->4->5->9->10->12->13->25->
+Level order Traversal
+10->9->13->2->12->25->5->3->4->
+Enter 1 to add nodes to the tree
+Enter 2 to search for a node in the tree
+Enter 3 to print the tree
+Enter 4 to exit
