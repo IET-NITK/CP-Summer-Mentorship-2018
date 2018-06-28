@@ -1,62 +1,127 @@
-//max heap
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-void max_heapify (int Arr[ ], int i, int N)
+#include<stdio.h>
+#include<stdlib.h>
+struct node
 {
-    int left = 2*i;                  //left child
-    int right = 2*i +1,largest;           //right child
-    if(left<= N and Arr[left] > Arr[i] )
-          largest = left;
-    else
-         largest = i;
-    if(right <= N and Arr[right] > Arr[largest] )
-        largest = right;
-    if(largest != i )
-    {
-        swap (Arr[i] , Arr[largest]);
-        max_heapify (Arr, largest,N);
-    } 
+    int key;
+    struct node *left, *right;
+};
+struct node* search(struct node* root, int key)
+{
+    if (root==NULL||root->key == key)
+       return root; 
+    if (root->key < key)
+       return search(root->right, key);
+    return search(root->left, key);
 }
-void build_maxheap (int Arr[ ],int N)
+
+struct node *newNode(int item)
 {
-    for(int i = N/2 ; i >= 1 ; i-- )
+    struct node *temp =  (struct node *)malloc(sizeof(struct node));
+    temp->key = item;
+    temp->left = temp->right = NULL;
+    return temp;
+}
+void inorder(struct node *root)
+{
+    if (root != NULL)
     {
-        max_heapify (Arr, i,7) ;
+        inorder(root->left);
+        printf("%d \n", root->key);
+        inorder(root->right);
     }
 }
-int main(){
-int Arr[8],i;
-for(i=1;i<7;i++)
-Arr[i]=10*(9-i);//already a max heap
-//insert 90
-Arr[7]=90;//intially at leaf
-build_maxheap(Arr,7);
-cout<<"after inserting element"<<endl;
-for(i=1;i<8;i++)
-cout<<Arr[i]<<endl;
-//now removing max and placing last leaf at its position
-Arr[1]=Arr[7];
-build_maxheap(Arr,6);
-cout<<"after extracting max"<<endl;
-for(i=1;i<7;i++)
-cout<<Arr[i]<<endl;}
+void preorder(struct node *root)
+{
+    if (root != NULL)
+    {
+	printf("%d \n", root->key);        
+	preorder(root->left);
+        preorder(root->right);
+    }
+}
+void postorder(struct node *root)
+{
+    if (root != NULL)
+    {
+	postorder(root->left);
+        postorder(root->right);
+	printf("%d \n", root->key); 
+    }
+}
+void levell(struct node *root,int level)
+{if(root==NULL)
+return ;
+if(level==1)
+printf("%d\n",root->key);
+else if(level>1)
+{levell(root->left,level-1);
+levell(root->right,level-1);}}
+void levelorder(struct node *root)
+{int h=3;
+for(int i=1;i<=h;i++)
+levell(root,i);
+}
 
+struct node* insert(struct node* node, int key)
+{
+    if (node == NULL) return newNode(key);
+    if (key < node->key)
+	node->left  = insert(node->left, key);
+    else if (key > node->key)
+        node->right = insert(node->right, key);   
+    return node;
+}
+int main()
+{
+    struct node *root = NULL;
+    root = insert(root, 50);
+    insert(root, 30);
+    insert(root, 20);
+    insert(root, 40);
+    insert(root, 70);
+    insert(root, 60);
+    insert(root, 80);
+printf("inorder\n");    
+inorder(root);
+printf("preorder\n");
+preorder(root);
+printf("postorder\n");
+postorder(root);
+printf("levelorder\n");
+levelorder(root);
+    return 0;
+}
 /*output:
-after inserting element
-90
+inorder
+20
+30
+40
+50
+60
 70
 80
+preorder
 50
+30
+20
+40
+70
+60
+80
+postorder
+20
 40
 30
 60
-after extracting max
 80
 70
-60
 50
+levelorder
+50
+30
+70
+20
 40
-30*/
-
+60
+80*/
 
