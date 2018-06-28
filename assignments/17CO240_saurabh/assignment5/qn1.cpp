@@ -1,3 +1,10 @@
+//assignment 5 question1:https://www.codechef.com/problems/MARRAYS
+//solution link:https://www.codechef.com/viewsolution/19000002
+
+
+
+//code:
+
 #include<stdio.h>
 #include<bits/stdc++.h>
 using namespace std;
