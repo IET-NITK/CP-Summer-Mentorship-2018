@@ -5,8 +5,9 @@
 
 //code:
 
-#include<stdio.h>
+#include<iostream>
 #include<bits/stdc++.h>
+#include<math.h>
 using namespace std;
 long long int ma(long long int a,long long int b){
 if(a>b)
@@ -19,11 +20,11 @@ while(t--)
 {long long int n;
 cin>>n;
 vector<vector<long long int>>v(n),sum(n);
-vector<long long int>s(n);
+int s[n];
 for(i=0;i<n;i++)
 {cin>>s[i];
-sum[i].resize(s[i]);
-v[i].resize(s[i]);
+sum[i].resize(s[i],0);
+v[i].resize(s[i],0);
 for(j=0;j<s[i];j++)
 {cin>>a;
 v[i][j]=a;}}
@@ -40,15 +41,19 @@ min=v[0][i];
 for(i=0;i<s[1];i++)
 sum[1][i]=ma(abs(max-v[1][i]),abs(v[1][i]-min));
 for(i=2;i<n;i++)
-{for(j=0;j<s[i];j++)
+{assert(i<n);
+for(j=0;j<s[i];j++)
 {a1=sum[i-1][0]+(abs(v[i-1][s[i-1]-1]-v[i][j])*i);
 for(k=s[i-1]-1;k>=1;k--)
 a1=ma(a1,(sum[i-1][k]+abs(v[i-1][k-1]-v[i][j])*i));
 sum[i][j]=a1;}}
-long long int res=sum[n-1][0];
-for(i=1;i<s[n-1];i++)
+long long int res=0;
+//assert(i>n);
+for(i=0;i<s[n-1];i++)
 if(res<sum[n-1][i])
 res=sum[n-1][i];
 cout<<res<<endl;}}
+
+
 
 
