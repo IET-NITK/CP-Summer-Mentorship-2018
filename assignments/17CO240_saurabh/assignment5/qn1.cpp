@@ -1,5 +1,5 @@
 //assignment 5 question1:https://www.codechef.com/problems/MARRAYS
-//solution link:https://www.codechef.com/viewsolution/19000002
+//solution link:https://www.codechef.com/viewsolution/19087552
 
 
 
