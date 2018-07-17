@@ -1,4 +1,4 @@
-//qn1 assignment1
+//qn assignment2
 //code:
 #include<bits/stdc++.h>
 using namespace std;

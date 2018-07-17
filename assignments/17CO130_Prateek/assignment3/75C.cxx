@@ -1,4 +1,4 @@
-// problem:Assignmrnt3 2nd question -75C
+// problem:Assignmrnt3 2nd question :75C
 // link:http://codeforces.com/problemset/submission/75/38532512
 #include<bits/stdc++.h>
 using namespace std;
