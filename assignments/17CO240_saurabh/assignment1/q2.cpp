@@ -1,3 +1,9 @@
+// https://www.codechef.com/LTIME52/problems/C00K0FF/
+// solution link : https://www.codechef.com/viewsolution/18542245
+
+
+//code :
+
 #include<iostream>
 #include<bits/stdc++.h>
 #include<string>
